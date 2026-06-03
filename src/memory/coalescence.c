@@ -1,13 +1,27 @@
+#include <stdlib.h>
 #include "memory_manager.h"
 
-/*
-Implementar unión de bloques libres.
+void mm_coalesce(MemoryManager* mm) {
+    if (mm == NULL || mm->head == NULL)
+        return;
 
-Ejemplo:
+    MemoryBlock* current = mm->head;
 
-[P1][Libre][Libre][P2]
+    while (current != NULL && current->next != NULL) {
 
-↓
+        if (current->free && current->next->free) {
+            MemoryBlock* next_block = current->next;
 
-[P1][Libre Grande][P2]
-*/
+            current->size += next_block->size;
+            current->next = next_block->next;
+
+            if (next_block->next != NULL) {
+                next_block->next->prev = current;
+            }
+
+            free(next_block);
+        } else {
+            current = current->next;
+        }
+    }
+}
