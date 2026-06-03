@@ -100,39 +100,6 @@ void mm_free(
     }
 }
 
-void mm_coalesce(
-    MemoryManager* mm
-)
-{
-    MemoryBlock* current =
-        mm->head;
-
-    while(current &&
-          current->next)
-    {
-        if(current->free &&
-           current->next->free)
-        {
-            MemoryBlock* next =
-                current->next;
-
-            current->size += next->size;
-
-            current->next =
-                next->next;
-
-            if(next->next)
-                next->next->prev =
-                    current;
-
-            free(next);
-        }
-        else
-        {
-            current = current->next;
-        }
-    }
-}
 
 void mm_destroy(
     MemoryManager* mm
