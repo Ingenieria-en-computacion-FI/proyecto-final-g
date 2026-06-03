@@ -65,7 +65,7 @@ int mm_allocate_first_fit(
 
             current->size = size;
             current->free = 0;
-            current->pid = next_pid++;
+            current->pid = current->start;
 
             return current->pid;
         }
