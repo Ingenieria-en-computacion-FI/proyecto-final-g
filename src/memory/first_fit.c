@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include "memory_manager.h"
 
-static int next_pid = 0;
-
 MemoryManager* mm_create(int total_memory)
 {
     MemoryManager* mm =
