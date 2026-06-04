@@ -42,17 +42,21 @@ La estructura inicial del repositorio generó confusión respecto a la ubicació
 ## Correcciones realizadas
 Se revisó la estructura real del proyecto.
 Se identificaron las funciones pendientes de implementación.
-Se documentó la lógica necesaria para el funcionamiento de la pila.
-Se documentó la lógica de asignación de memoria mediante First Fit.
-Se documentó el proceso de coalescencia para reducir fragmentación externa.
-Se definió una estrategia de implementación por módulos para facilitar el desarrollo y las pruebas.
-
+Se implementó la estructura de datos Queue siguiendo el comportamiento FIFO.
+Se implementó la estructura Circular Queue para soportar la ejecución cíclica de procesos.
+Se implementó el algoritmo de planificación FIFO.
+Se implementó el algoritmo de asignación de memoria First Fit.
+Se implementó la coalescencia de bloques libres para reducir la fragmentación externa.
+Se verificó la integración entre los módulos implementados y las pruebas proporcionadas.
 ## Validaciones realizadas
 Revisión de los casos de prueba de Stack.
 Revisión de los casos de prueba de Queue.
-Revisión de los casos de prueba de Round Robin.
+Revisión de los casos de prueba de Circular Queue.
+Revisión de los casos de prueba de Scheduler FIFO.
 Revisión de los casos de prueba de Memory Manager.
 Verificación conceptual del comportamiento LIFO para Stack.
 Verificación conceptual del comportamiento FIFO para Queue.
+Verificación del funcionamiento de Circular Queue mediante inserción y extracción circular.
 Verificación conceptual del algoritmo First Fit.
 Verificación conceptual de la coalescencia de bloques libres.
+Comprobación de la reutilización de espacios libres tras liberar memoria.
