@@ -18,5 +18,28 @@ int scheduler_next(
 void scheduler_destroy(
     Scheduler* scheduler
 );
+typedef struct RoundRobinScheduler RoundRobinScheduler;
 
+RoundRobinScheduler* rr_create(
+    int capacity,
+    int quantum
+);
+
+void rr_add_process(
+    RoundRobinScheduler* scheduler,
+    int pid,
+    int burst_time
+);
+
+int rr_next(
+    RoundRobinScheduler* scheduler
+);
+
+int rr_is_finished(
+    RoundRobinScheduler* scheduler
+);
+
+void rr_destroy(
+    RoundRobinScheduler* scheduler
+);
 #endif
