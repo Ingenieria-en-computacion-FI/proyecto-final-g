@@ -5,8 +5,6 @@ void test_stack_empty();
 
 void test_queue_fifo();
 
-void test_round_robin_behavior();
-
 void test_fifo_scheduler();
 
 void test_first_fit();
