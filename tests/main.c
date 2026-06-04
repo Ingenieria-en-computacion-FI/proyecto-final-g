@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void round_robin_behavior();
+void test_round_robin_behavior();
 void test_stack_push_pop();
 void test_stack_empty();
 
