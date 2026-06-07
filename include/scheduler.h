@@ -42,4 +42,7 @@ int rr_is_finished(
 void rr_destroy(
     RoundRobinScheduler* scheduler
 );
+
+Scheduler* scheduler_create_sjf();
+
 #endif

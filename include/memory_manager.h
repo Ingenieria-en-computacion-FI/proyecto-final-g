@@ -32,6 +32,21 @@ int mm_allocate_first_fit(
     int size
 );
 
+
+int mm_allocate_best_fit(
+    MemoryManager* mm,
+    int size
+);
+
+int mm_allocate_worst_fit(
+    MemoryManager* mm,
+    int size
+);
+
+void mm_compact(
+    MemoryManager* mm
+);
+
 void mm_free(
     MemoryManager* mm,
     int pid
